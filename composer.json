@@ -14,9 +14,15 @@
 		}
 	},
 	"repositories": [
-		{ "type": "git", "url": "https://github.com/chrisboulton/php-resque" }
+		{
+			"type": "vcs",
+			"url": "https://github.com/bryanfagan/php-resque"
+		}
 	],
 	"require": {
 		"chrisboulton/php-resque": "dev-master"
-	}
+	},
+	"bin": [
+		"bin/resquescheduler"
+	]
 }

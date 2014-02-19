@@ -23,6 +23,6 @@
 		"chrisboulton/php-resque": "dev-master"
 	},
 	"bin": [
-		"bin/resquescheduler"
+		"bin/resque-scheduler"
 	]
 }

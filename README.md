@@ -61,11 +61,10 @@ worker is responsible for pulling items off the schedule/delayed queue and addin
 them to the queue for resque. This means that for delayed or scheduled jobs to be
 executed, the worker needs to be running.
 
-A basic "up-and-running" resque-scheduler.php file is included that sets up a
-running worker environment is included in the root directory. It accepts many
-of the same environment variables as php-resque:
+A basic "up-and-running" `bin/resque-scheduler` file is included that sets up a
+running worker environment (`vendor/bin/resque-scheduler` when installed via Composer). It accepts many of the same environment variables as php-resque:
 
-* `REDIS_BACKEND` - Redis server to connect to
+* `REDIS_BACKEND_SERVER` - Redis server to connect to
 * `LOGGING` - Enable logging to STDOUT
 * `VERBOSE` - Enable verbose logging
 * `VVERBOSE` - Enable very verbose logging
@@ -73,14 +72,7 @@ of the same environment variables as php-resque:
 * `APP_INCLUDE` - Include this file when starting (to launch your app)
 * `PIDFILE` - Write the PID of the worker out to this file
 
-The resque-scheduler worker requires resque to function. The demo
-resque-scheduler.php worker allows you to supply a `RESQUE_PHP` environment
-variable with the path to Resque.php. If not supplied and resque is not already
-loaded, resque-scheduler will attempt to load it from your include path
-(`require_once 'Resque/Resque.php';'`)
-
-It's easy to start the resque-scheduler worker using resque-scheduler.php:
-    $ RESQUE_PHP=../resque/lib/Resque/Resque.php php resque-scheduler.php
+The resque-scheduler worker requires resque to function.
 
 ## Event/Hook System
 
